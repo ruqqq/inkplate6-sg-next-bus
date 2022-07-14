@@ -1,0 +1,14 @@
+{
+  "name": "Inkplate 6 SG Next Bus",
+  "version": "1",
+  "slug": "inkplate6-sg-next-bus",
+  "description": "Starts a server to serve png image of next bus timings for Inkplate 6",
+  "arch": ["armv7"],
+  "image": "ruqqq/inkplate6-sg-next-bus-{arch}",
+  "startup": "application",
+  "boot": "auto",
+  "host_network": true,
+  "ingress": true,
+  "ingress_port": 0,
+  "audio": false,
+}
