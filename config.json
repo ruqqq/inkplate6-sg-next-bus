@@ -6,6 +6,7 @@
   "arch": ["armv7"],
   "image": "ruqqq/inkplate6-sg-next-bus-{arch}",
   "startup": "application",
+  "init": false,
   "boot": "auto",
   "host_network": true,
   "ingress": true,
