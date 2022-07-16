@@ -9,6 +9,12 @@
   "boot": "auto",
   "host_network": true,
   "ingress": true,
-  "ingress_port": 0,
+  "ingress_port": 8090,
   "audio": false,
+  "options": {
+    "datamall_account_key": ""
+  },
+  "schema": {
+    "datamall_account_key": "str"
+  }
 }

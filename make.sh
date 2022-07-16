@@ -1,5 +1,5 @@
 #!/bin/sh
-GOOS=linux GOARCH=arm GOARM=7 go build -o prayertime_ha
+GOOS=linux GOARCH=arm GOARM=7 go build -o inkplate6-sg-next-bus
 
 docker run --rm -ti --name hassio-builder --privileged \
   -v .:/data \
