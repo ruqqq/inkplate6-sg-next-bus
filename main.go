@@ -7,7 +7,8 @@ import (
 	"log"
 	"net/http"
 	"time"
-  "os"
+	"os"
+	"io/ioutil"
 
 	"gopkg.in/fogleman/gg.v1"
 )
@@ -195,8 +196,29 @@ func render(data *Data, w http.ResponseWriter) {
     loadFontFace(dc, "./arial.ttf", 16);
     dc.DrawString(fmt.Sprintf("Last updated: %s", data.LastUpdated.Format("Mon, 2 Jan 2006 03:04:05 PM")), 16, 780) 
 
-    w.Header().Add("Content-Type", "image/png")
-    dc.EncodePNG(w)
+    dc.SavePNG("out.png")
+
+    buf, err := ioutil.ReadFile("out.png")
+    if err != nil {
+      log.Printf("Error: %v\n", err)
+    }
+    w.Header().Set("Content-Length", fmt.Sprintf("%d", len(buf)))
+    w.Header().Set("Content-Type", "image/png")
+    w.Write(buf)
+
+    // infile, err := os.Open("out.png")
+    // if err != nil {
+    //   log.Printf("Error: %v\n", err)
+    // }
+    // defer infile.Close()
+
+    //image, err := png.Decode(infile)
+    //if err != nil {
+    //  log.Printf("Error: %v\n", err)
+    //}
+
+    //encoder := &png.Encoder{CompressionLevel: png.BestCompression}
+    //encoder.Encode(w, image)
 }
 
 func drawBusTimings(dc *gg.Context, location, busNumber, timing1, timing2, timing3 string, x, y float64) {

@@ -1,6 +1,6 @@
 {
   "name": "Inkplate 6 SG Next Bus",
-  "version": "1",
+  "version": "2",
   "slug": "inkplate6-sg-next-bus",
   "description": "Starts a server to serve png image of next bus timings for Inkplate 6",
   "arch": ["armv7"],
