@@ -193,8 +193,8 @@ func render(data *Data, w http.ResponseWriter) {
       }
     }
 
-    loadFontFace(dc, "./arial.ttf", 16);
-    dc.DrawString(fmt.Sprintf("Last updated: %s", data.LastUpdated.Format("Mon, 2 Jan 2006 03:04:05 PM")), 16, 780) 
+    loadFontFace(dc, "./arial.ttf", 20);
+    dc.DrawString(fmt.Sprintf("Updated: %s", data.LastUpdated.Format("Mon, 2 Jan 2006, 03:04 PM")), 16, 780) 
 
     dc.SavePNG("out.png")
 
